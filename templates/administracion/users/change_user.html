@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+  {% if object_list %}
+
+    {% for solicitud in object_list %}
+       <div class="solicitante">
+         <div class="">
+           <p>{{ solicitud.username }}</p>
+           <p>{{ solicitud.customer.customer }}</p>
+           <p>{{ solicitud.email }}</p>
+           <p><a href="{% url 'administracion:change_solicitud' solicitud.id%}" class="btn btn-primary">editar</a></p>
+         </div>
+       </div>
+    {%endfor%}
+  {% endif %}
+
+{% endblock %}

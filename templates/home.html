@@ -1,0 +1,121 @@
+<!-- templates/customers/index -->
+{% extends 'base/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+
+  {% if user.is_authenticated %}
+    {% if user.is_bratton_admin %}
+      <h2>You are admin, please redirect to  <a href="/administracion">administration</a> </h2>
+    {% else %}
+      {% if user.is_validated %}
+
+      <div class="title-homepage">
+        <h3>Welcome to the Bratton Tracking APP</h3>
+      </div>
+      <div class="subtitle-homepage">
+        <h3>Your containers</h3>
+      </div>
+
+      <div class="row vessel-cabecera">
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>Bl number</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>Customer</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>P.O.L</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>P.O.D</p>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="vessel-object-content">
+            <p>E.T.A</p>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <div class="vessel-object-content">
+            <p>E.T.D</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>Status</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="vessel-list">
+      <hr>
+        {% if object_list %}
+          {% for vessel in object_list  %}
+            <div class="row vessel-object" id="vessel-object {{ vessel.id }}">
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.bl_number }}</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.customer.customer }}</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.pol }}</p>
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.pod }}</p>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.eta }}</p>
+                </td>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.etd }}</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{vessel.status}}</p>
+                </div>
+              </div>
+            </div>
+            <hr>
+          {% endfor %}
+
+        {% else %}
+          <div class="error-message">
+            <h4>no hay registros de containers</h4>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+      {% else %}
+          <p>isn't valid</p>
+      {% endif %}
+    {% endif %}
+  {% else %}
+    <p>not is auth</p>
+  {% endif %}
+
+{% endblock %}

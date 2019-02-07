@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block header %}
+<div class="title">
+  <h1>Servicios</h1>
+</div>
+{%endblock%}
+
+
+{% block content %}
+
+  <div class="section-title">
+    <h3>Carga Customer</h3>
+  </div>
+  <div class="update-form">
+
+    <form class="form container" method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="form-part col-md-12">
+          <div class="form-group">
+            <label for="type">Type of cargo</label>
+            {{ form.type }}
+          </div>
+          <div class="form-group row fomr-submit">
+            <button type="submit" class="btn btn-success col-md-12" name="button">Guardar</button>
+          </div>
+        </div>
+      </div>
+
+      <!--{{ form.as_p }}-->
+
+    </form>
+  </div>
+{% endblock %}

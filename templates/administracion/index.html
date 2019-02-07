@@ -1,0 +1,163 @@
+{% extends 'base/base.html'  %}
+{% block content %}
+  <div class="section-title">
+    <h3>Containers in progress</h3>
+  </div>
+
+  <div class="content row">
+    <div class="vessels col-md-8">
+
+      <div class="row vessel-cabecera">
+        <div class="col-md-3">
+          <div class="vessel-object-content">
+            <p>Bl number</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="vessel-object-content">
+            <p>Customer</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="vessel-object-content">
+            <p>P.O.D</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="vessel-object-content">
+            <p>E.T.A</p>
+          </div>
+        </div>
+        <div class="btn-mas-vessel col-md-1">
+          <a href="/administracion/vessel/new"> <i class="fas fa-plus-circle"></i> </a>
+        </div>
+      </div>
+
+      <div class="vessel-list">
+      <hr>
+        {% if vessels %}
+          {% for vessel in vessels  %}
+            <div class="row vessel-object" id="vessel-object {{ vessel.id }}">
+              <div class="col-md-3">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.bl_number }}</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.customer.customer }}</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.pol }}</p>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="vessel-object-content">
+                  <p>{{ vessel.eta }}</p>
+                </td>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <a href="{% url 'administracion:vessels_update' vessel.id%}"> <i class="fas fa-edit"></i> </a>
+                <a href="{% url 'administracion:vessels_delete' vessel.id%}"> <i class="fas fa-trash"></i> </a>
+              </div>
+            </div>
+            <hr>
+          {% endfor %}
+
+        {% else %}
+          <div class="error-message">
+            <h4>no hay registros de containers</h4>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="cargas col-md-3">
+      <ul id="list">
+        <li id="list-item">
+          <a href="#" > <i class="fas fa-user-circle"></i> </a>
+          <div class="container-cargas customers">
+            <div class="body">
+              <div class="header-list-cargas">
+                <h4>Customers</h4>
+              </div>
+              {% if customers %}
+              {% for customer in customers %}
+                <div class="item">
+                  <p>{{ customer.customer }}</p>
+                </div>
+              {% endfor %}
+              {% else %}
+              <p>no hay items</p>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+        <li id="list-item">
+          <a href="#"> <i class="fas fa-concierge-bell"></i> </a>
+          <div class="container-cargas services">
+            <div class="body">
+              <div class="header-list-cargas">
+                <h4>Services</h4>
+              </div>
+              {% if services %}
+              {% for service in services %}
+                <div class="item">
+                  <p>{{ service.service }}</p>
+                </div>
+              {% endfor %}
+              {% else %}
+              <p>no hay items</p>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+        <li id="list-item">
+          <a href="#" > <i class="fas fa-truck"></i> </a>
+          <div class="container-cargas tocs">
+            <div class="body">
+              <div class="header-list-cargas">
+                <h4>Type of cargo</h4>
+              </div>
+              {% if tocs %}
+              {% for toc in tocs %}
+                <div class="item">
+                  <p>{{ toc.type }}</p>
+                </div>
+              {% endfor %}
+              {% else %}
+              <p>no hay items</p>
+              {% endif %}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+
+<!--
+
+
+<tr>
+  <td>{{ form.bl_number }}</td>
+  <td>{{ form.customer }}</td>
+  <td>{{ form.service }}</td>
+  <td>{{ form.status }}</td>
+  <td>{{ form.typeofcargo }}</td>
+  <td>{{ form.pol }}</td>
+  <td>{{ form.pod }}</td>
+  <td>{{ form.etd }}</td>
+  <td>{{ form.eta }}</td>
+  <td>
+    <a href="{% url 'administracion:vessels_update' vessel.id%}" class="btn btn-primary">editar</a>
+  </td>
+  <td>
+    <a href="{% url 'administracion:vessels_delete' vessel.id%}" class="btn btn-danger">eliminar</a>
+  </td>
+</tr>
+
+-->
