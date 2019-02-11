@@ -41,7 +41,7 @@ class ChangeUserToActivated(LoginRequiredMixin, PermissionRequiredMixin ,UpdateV
     permission_required = 'users.validate_user'
     form_class = ChangeUserToActivatedForm
     template_name = 'administracion/users/user_update_page.html'
-    success_url = reverse_lazy('administracion:change_solicitud')
+    success_url = reverse_lazy('administracion:solicitudes')
 
 
 class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
