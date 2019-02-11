@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name="index"),
     url(r'^solicitudes', SolicitudesList.as_view(), name='solicitudes'),
-    url(r'^solicitudes/change_user/(?P<pk>\d)/$', ChangeUserToActivated.as_view(), name='change_solicitud' ),
+    url(r'^change_user/(?P<pk>\d)/$', ChangeUserToActivated.as_view(), name='change_solicitud' ),
     url(r'^cargas/', CargasView.as_view(), name='cargas' ),
     ##clientes
     url(r'^vessel/new$', VesselCreate.as_view() , name="vessels_nuevo" ),
