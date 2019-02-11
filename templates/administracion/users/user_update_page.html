@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% blobk content %}
+{% block content %}
 <form class="form container" method="post">
   {% csrf_token %}
   {{ form.as_p }}
