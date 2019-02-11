@@ -1,8 +1,111 @@
-<!-- templates/customers/index -->
-{% extends 'base/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Bratton Tracking</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+      {% if user.is_validated %}
+      <section class="header-init-page">
+        <div class="title">
+          <h1>Welcome to Bratton Tracking WEB APP</h1>
+          <h2>You are validated go to app</h2>
+        </div>
+        <div class="button-go-app row">
+          <a href="/tracking" class="btn btn-success col-md-6 offset-md-3">Go</a>
+        </div>
+      </section>
+      {% else %}
+      <section class="header-init-page">
+        <div class="title">
+          <h1>Welcome to Bratton Tracking WEB APP</h1>
+        </div>
+      </section>
+        <section>
+          <div class="message description">
+            <div class="title">
+              <h2>Now you are a user</h2>
+            </div>
+            <div class="text">
+              <p>to begin using the app, you must wait for the administrators' validation</p>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+    {% else %}
 
-{% block title %}index{% endblock %}
+    <!--
+    usuario no autenticado...
+    pagina de bienvenida a la app
+    con redireccionamiento a for users o for admins
+    -->
+    <section class="header-init-page">
+      <div class="title">
+        <h1>Welcome to Bratton Tracking WEB APP</h1>
+      </div>
+      <div class="navigation">
+        <div class="menu">
+          <ul>
+            <li> <a href="http://bratton.com.ar"> Bratton </a> </li>
+            <li> <a href="#about-app"> About APP </a> </li>
+            <li> <a href="#modes"> Customers </a> </li>
+            <li> <a href="#modes"> Admins </a> </li>
+            <li> <a href="#init-page">Select mode</a> </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="about-app description" id="about-app">
+      <div class="title">
+        <h2> About Bratton Tracking WEB APP </h2>
+      </div>
+      <div class="text">
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+    </section>
+    <hr>
+    <section class="modes row" id="modes">
+      <section class="about-app-users description col-md-6">
+        <div class="title">
+          <h3>Bratton for Customers</h3>
+        </div>
+        <div class="text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
+        <section class="about-app-admins description col-md-6">
+          <div class="title">
+            <h3>Bratton for Admins</h3>
+          </div>
+          <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </section>
+    </section>
+    <section class="init_page" id="init-page">
+      <a href="/tracking" class="for-users">
+        <div class="title">
+          <h2>For Customers</h2>
+        </div>
+      </a>
+      <a href="/administracion" class="for-admins">
+        <div class="title">
+          <h2>For Admins</h2>
+        </div>
+      </a>
+    </section>
 
-{% block content %}
-  <h1>Welcome to bratton tracking app</h1>
-{% endblock %}
+    {% endif %}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {% static 'styles/bootstrap.min.css' %}
+    <script src="{% static 'js/animate.js' %}"></script>
+    <script src="{% static 'js/smooth-scroll.min.js' %}">
+    </script>
+  </body>
+</html>

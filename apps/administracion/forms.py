@@ -35,7 +35,7 @@ class ChangeUserToActivatedForm(forms.ModelForm):
         }
 
         widgets = {
-            'is_validated': forms.BooleanField(initial=False, required=True),
+            'is_validated': forms.CheckboxInput(attrs={'class': 'required checkbox form-control'})
         }
 
 
