@@ -1,9 +1,13 @@
-$(Document).ready(function(){
+//scroll to
+$('a[href^="#"]').on('click',function(e){
+  e.preventDefault();
 
-  var list = getElementById('list-item')
+  var target = this.hash;
+  var $target = $(target) ;
 
-  for(var x = 0, x < list, x++) {
-      
-  }
+  //scroll and show hash
+  $('html, body').animate({
+    'scrollTop': $target.offset().top
+  },1000, 'swing',);
 
 });

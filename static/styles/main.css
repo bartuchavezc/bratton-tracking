@@ -146,4 +146,119 @@ html, body {
   color: lighblue;
 }
 
+.header-init-page {
+  background-image: url("../img/header-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 200px;
+  padding-bottom: 250px;
+}
+.header-init-page .title {
+  width: 100%;
+}
+.header-init-page .title h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+}
+.header-init-page .title h2 {
+  padding: 50px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+.header-init-page .button-go-app {
+  padding: 50px;
+  width: 100%;
+}
+.header-init-page .navigation {
+  padding-top: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.header-init-page .navigation .menu {
+  display: inline;
+}
+.header-init-page .navigation .menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-init-page .navigation .menu ul li {
+  padding: 20px;
+  font-size: 25px;
+}
+.header-init-page .navigation .menu ul li:hover {
+  border-bottom: 2px solid #fff;
+}
+.header-init-page .navigation .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.description {
+  padding: 100px;
+}
+.description .title {
+  width: 100%;
+}
+.description .title h2 {
+  text-align: center;
+}
+.description .title h3 {
+  text-align: center;
+}
+.description .text {
+  width: 100%;
+}
+.description .text p {
+  padding-top: 50px;
+  font-size: 22px;
+  text-align: center;
+}
+.init_page {
+  background: #aaa;
+  display: flex;
+}
+.init_page .for-users {
+  width: 50%;
+  padding: 250px;
+  border-right: 2px solid black;
+  background-image: url("../img/vessel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none;
+  opacity: 0.95;
+}
+.init_page .for-users:hover {
+  opacity: 1;
+}
+.init_page .for-users .title h2 {
+  text-align: center;
+  color: #fff;
+}
+.init_page .for-admins {
+  width: 50%;
+  padding: 250px;
+  background-image: url("../img/administrativa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: none;
+  opacity: 0.95;
+}
+.init_page .for-admins:hover {
+  opacity: 1;
+}
+.init_page .for-admins .title h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.message {
+  padding: 200p;
+}
+
 /*# sourceMappingURL=main.css.map */
