@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.urls import  reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from apps.administracion.forms import VesselForm, ServiceForm, TypeOfCargoForm, CustomerForm, ChangeUserToActivatedForm, StatusIdentForm
-from apps.administracion.models import Customer, Service, TypeOfCargo, Vessel
+from apps.administracion.models import Customer, Service, TypeOfCargo, Vessel, StatusIdent
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from apps.users.models import CustomUser
 # Create your views here.
