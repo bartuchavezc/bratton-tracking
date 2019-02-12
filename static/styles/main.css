@@ -163,7 +163,7 @@ html, body {
   color: #fff;
 }
 .header-init-page .title h2 {
-  padding: 50px;
+  padding-top: 50px;
   text-align: center;
   font-size: 30px;
   color: #fff;
@@ -175,11 +175,10 @@ html, body {
 .header-init-page .navigation {
   padding-top: 90px;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .header-init-page .navigation .menu {
   display: inline;
+  margin: auto;
 }
 .header-init-page .navigation .menu ul {
   list-style: none;
@@ -219,13 +218,14 @@ html, body {
   font-size: 22px;
   text-align: center;
 }
+
 .init_page {
   background: #aaa;
   display: flex;
 }
 .init_page .for-users {
-  width: 50%;
-  padding: 250px;
+  padding-top: 250px;
+  padding-bottom: 250px;
   border-right: 2px solid black;
   background-image: url("../img/vessel.jpg");
   background-repeat: no-repeat;
@@ -241,8 +241,8 @@ html, body {
   color: #fff;
 }
 .init_page .for-admins {
-  width: 50%;
-  padding: 250px;
+  padding-top: 250px;
+  padding-bottom: 250px;
   background-image: url("../img/administrativa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -258,7 +258,13 @@ html, body {
 }
 
 .message {
-  padding: 200p;
+  padding: 200px;
+}
+
+@media (max-width: 800px) {
+  .navigation {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

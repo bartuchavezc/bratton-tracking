@@ -12,7 +12,7 @@
       font-size: 50px
       color: #fff
     h2
-      padding: 50px
+      padding-top: 50px
       text-align: center
       font-size: 30px
       color: #fff
@@ -22,10 +22,9 @@
   .navigation
     padding-top: 90px
     width: 100%
-    display: flex
-    justify-content: center
     .menu
       display: inline
+      margin: auto
       ul
         list-style: none
         display: flex
@@ -53,12 +52,12 @@
       padding-top: 50px
       font-size: 22px
       text-align: center
-  .continue-to-app-links
 .init_page
   background: #aaa
   display: flex
   .for-users
-    padding: 250px
+    padding-top: 250px
+    padding-bottom: 250px
     border-right: 2px solid black
     background-image: url('../img/vessel.jpg')
     background-repeat: no-repeat
@@ -72,7 +71,8 @@
         text-align: center
         color: #fff
   .for-admins
-    padding: 250px
+    padding-top: 250px
+    padding-bottom: 250px
     background-image: url('../img/administrativa.jpg')
     background-repeat: no-repeat
     background-size: cover
@@ -85,4 +85,8 @@
         text-align: center
         color: #fff
 .message
-  padding: 200p
+  padding: 200px
+
+@media (max-width: 800px)
+  .navigation
+    display: none
