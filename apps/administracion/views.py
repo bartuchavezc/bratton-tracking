@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import  reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from apps.administracion.forms import VesselForm, ServiceForm, TypeOfCargoForm, CustomerForm, ChangeUserToActivatedForm
+from apps.administracion.forms import VesselForm, ServiceForm, TypeOfCargoForm, CustomerForm, ChangeUserToActivatedForm, StatusIdentUpdate
 from apps.administracion.models import Customer, Service, TypeOfCargo, Vessel
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from apps.users.models import CustomUser
@@ -24,6 +24,15 @@ class IndexView( LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
         context['services'] = Service.objects.all()
         context['tocs'] = TypeOfCargo.objects.all()
         return context
+
+class StatusIdentUpdate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    login_url = '/users/login/'
+    redirect_field_name = '/administracion/'
+    permission_required = 'users.validate_user'
+    model = StatusIdent
+    form_class = StatusIdentForm
+    template_name = 'administracion/status/update.html'
+    success_url = reverse_lazy('administracion:index')
 
 #Views Cliente
 class SolicitudesList(LoginRequiredMixin, PermissionRequiredMixin, ListView):

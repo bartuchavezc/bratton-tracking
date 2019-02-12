@@ -18,6 +18,11 @@ class TypeOfCargo (models.Model):
     def __str__(self):
         return '{}'.format(self.type)
 
+class StatusIdent(models.Model):
+    name = models.CharField(editable=True, max_length=100)
+    def __str__(self):
+        return '{}'.format(self.name)
+        
 class Vessel (models.Model):
     bl_number = models.CharField(editable=True, max_length=100)
     customer = models.ForeignKey(Customer, null=True, blank=True , on_delete=models.CASCADE)
@@ -30,3 +35,4 @@ class Vessel (models.Model):
     contenedor = models.TextField(max_length=140)
     ref = models.TextField(max_length=140)
     status = models.TextField(max_length=140)
+    status_ident = models.ForeignKey(StatusIdent, null=True, blank=True, on_delete=models.CASCADE)

@@ -1,7 +1,24 @@
 from django import forms
 
-from apps.administracion.models import Vessel, TypeOfCargo, Service, Customer
+from apps.administracion.models import Vessel, TypeOfCargo, Service, Customer, StatusIdent
 from apps.users.models import CustomUser
+
+class StatusIdentForm(forms.ModelForm):
+
+    class Meta:
+        model = StatusIdent
+
+        fields = [
+            'name',
+        ]
+
+        labels = {
+            'name': 'Status Name',
+        }
+
+        widgets = {
+            'name': forms.TextInput({'class': 'form-control'})
+        }
 
 class CustomerForm(forms.ModelForm):
 #form clientes
@@ -95,6 +112,7 @@ class VesselForm(forms.ModelForm):
             'contenedor',
             'ref',
             'status',
+            'status_ident',
         ]
 
         labels = {
@@ -109,6 +127,7 @@ class VesselForm(forms.ModelForm):
             'contenedor': 'Contenedor',
             'ref': 'Referente',
             'status': 'Status',
+            'status_ident': 'Satus Ident'
         }
 
         widgets = {
@@ -123,4 +142,5 @@ class VesselForm(forms.ModelForm):
             'contenedor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Contenedor'}),
             'ref': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Referente'}),
             'status': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Status'}),
+            'status_ident': forms.Select(attrs={'class': 'form-control'}),
             }
