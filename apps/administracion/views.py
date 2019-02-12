@@ -194,8 +194,8 @@ class CustomerDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     login_url = '/users/login/'
     permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
-    model = Vessel
-    template_name = 'administracion/vessel/delete.html'
+    model = Customer
+    template_name = 'administracion/customer/delete.html'
     success_url = reverse_lazy('administracion:index')
 
 class IndexList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
