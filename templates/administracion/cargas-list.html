@@ -20,7 +20,7 @@
       </div>
       <div class="cargas-list-page">
       <hr>
-      {% if customers %}
+    <!-- {% if customers %}
         {% for customer in customers  %}
           <div class="row vessel-object" id="vessel-object {{ customer.id }}">
             <div class="col-md-10">
@@ -28,11 +28,11 @@
                 <p>{{ customer.customer }}</p>
               </div>
             </div>
-          <!--  <div class="col-md-1">
+            <div class="col-md-1">
               <a href="{% url 'administracion:customers_update' customer.id%}"> <i class="fas fa-edit"></i> </a>
               <a href="{% url 'administracion:customers_delete' customer.id%}"> <i class="fas fa-trash"></i> </a>
             </div>
-          </div> -->
+          </div>
           <hr>
         {% endfor %}
 
@@ -41,6 +41,7 @@
           <h4>no hay registros de containers</h4>
         </div>
       {% endif %}
+    -->
       </div>
     </div>
     <div class="list-object col-md-5">
