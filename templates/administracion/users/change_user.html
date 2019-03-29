@@ -2,20 +2,22 @@
 
 {% block content %}
 
+
+<p>hasta aca va bien</p>
+
+<!--
   {% if object_list %}
 
-  <p>hasta aca va bien</p>
-
-    {% for solicitud in object_list %}
+  {% for solicitud in object_list %}
        <div class="solicitante">
          <div class="">
            <p>{{ solicitud.username }}</p>
            <p>{{ solicitud.customer }}</p>
            <p>{{ solicitud.email }}</p>
-          <!-- <p><a href="{% url 'administracion:change_solicitud' solicitud.id%}" class="btn btn-primary">editar</a></p> -->
+           <p><a href="{% url 'administracion:change_solicitud' solicitud.id%}" class="btn btn-primary">editar</a></p>
          </div>
        </div>
     {%endfor%}
   {% endif %}
-
+-->
 {% endblock %}
