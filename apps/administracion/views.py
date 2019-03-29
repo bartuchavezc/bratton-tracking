@@ -59,7 +59,7 @@ class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
     permission_required = 'users.validate_user'
     def get_context_data(self, **kwargs):
         context = super(CargasView, self).get_context_data(**kwargs)
-        #context['customers'] = Customer.objects.order_by('customer')
+        context['customers'] = Customer.objects.order_by('customer')
         context['services'] = Service.objects.order_by('service')
         context['tocs'] = TypeOfCargo.objects.order_by('type')
         return context
