@@ -20,7 +20,7 @@
       </div>
       <div class="cargas-list-page">
       <hr>
-      {% if customers %}
+      {% if !customers %}
         {% for customer in customers  %}
           <div class="row vessel-object" id="vessel-object {{ customer.id }}">
             <div class="col-md-10">
