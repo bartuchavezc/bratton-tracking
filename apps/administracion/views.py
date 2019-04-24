@@ -52,7 +52,7 @@ class ChangeUserToActivated(LoginRequiredMixin, PermissionRequiredMixin ,UpdateV
     template_name = 'administracion/users/user_update_page.html'
     success_url = reverse_lazy('administracion:solicitudes')
 
-
+'''
 class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
     login_url = '/users/login/'
     template_name = 'administracion/cargas-list.html'
@@ -63,32 +63,41 @@ class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
         context['services'] = Service.objects.order_by('service')
         context['tocs'] = TypeOfCargo.objects.order_by('type')
         return context    
-     
-'''
-    ////////////////////Lit's views//////////////////////
-class VesselList (LoginRequiredMixin ,ListView):
+'''     
 
+    #////////////////////Lits views//////////////////////
+    '''
+class VesselList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
+    permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
     model = Vessel
     template_name = 'administracion/vessel/list.html'
+'''
 
-class ServiceList (LoginRequiredMixin ,ListView):
+
+class ServiceList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
+    permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
+    model = Service
+    template_name = 'administracion/service/list.html'
 
-class TypeOfCargoList (LoginRequiredMixin ,ListView):
+class TypeOfCargoList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
+    permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
     model = TypeOfCargo
     template_name = 'administracion/toc/list.html'
 
-class CustomerList (LoginRequiredMixin ,ListView):
+class CustomerList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
+    permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
     model = Customer
     template_name = 'administracion/index.html'
-'''
+
+
 
 class VesselCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
     login_url = '/users/login/'

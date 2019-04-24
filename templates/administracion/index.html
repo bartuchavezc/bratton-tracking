@@ -78,60 +78,12 @@
       <ul id="list">
         <li id="list-item">
           <a href="#" > <i class="fas fa-user-circle"></i> </a>
-          <div class="container-cargas customers">
-            <div class="body">
-              <div class="header-list-cargas">
-                <h4>Customers</h4>
-              </div>
-              {% if customers %}
-              {% for customer in customers %}
-                <div class="item">
-                  <p>{{ customer.customer }}</p>
-                </div>
-              {% endfor %}
-              {% else %}
-              <p>no hay items</p>
-              {% endif %}
-            </div>
-          </div>
         </li>
         <li id="list-item">
           <a href="#"> <i class="fas fa-concierge-bell"></i> </a>
-          <div class="container-cargas services">
-            <div class="body">
-              <div class="header-list-cargas">
-                <h4>Services</h4>
-              </div>
-              {% if services %}
-              {% for service in services %}
-                <div class="item">
-                  <p>{{ service.service }}</p>
-                </div>
-              {% endfor %}
-              {% else %}
-              <p>no hay items</p>
-              {% endif %}
-            </div>
-          </div>
         </li>
         <li id="list-item">
           <a href="#" > <i class="fas fa-truck"></i> </a>
-          <div class="container-cargas tocs">
-            <div class="body">
-              <div class="header-list-cargas">
-                <h4>Type of cargo</h4>
-              </div>
-              {% if tocs %}
-              {% for toc in tocs %}
-                <div class="item">
-                  <p>{{ toc.type }}</p>
-                </div>
-              {% endfor %}
-              {% else %}
-              <p>no hay items</p>
-              {% endif %}
-            </div>
-          </div>
         </li>
       </ul>
     </div>

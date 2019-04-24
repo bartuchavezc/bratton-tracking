@@ -17,14 +17,17 @@ urlpatterns = [
     url(r'^vessel/delete/(?P<pk>\d)/$', VesselDelete.as_view() , name="vessels_delete"),
     ##customers
     url(r'^customers/new$', CustomerCreate.as_view() , name="customers_nuevo" ),
+    url(r'^customer/list$', CustomerList.as_view() , name="customer_list" ),
     url(r'^customers/edit/(?P<pk>\d)/$', CustomerUpdate.as_view() , name="customers_update"),
     url(r'^customers/delete/(?P<pk>\d)/$', CustomerDelete.as_view() , name="customers_delete"),
     ##services
     url(r'^services/new$', ServiceCreate.as_view() , name="services_nuevo" ),
+    url(r'^service/list$', ServiceList.as_view() , name="service_list" ),
     url(r'^services/edit/(?P<pk>\d)/$', ServiceUpdate.as_view() , name="services_update"),
     url(r'^services/delete/(?P<pk>\d)/$', ServiceDelete.as_view() , name="services_delete"),
     ##type of cargo
     url(r'^toc/new$', TypeOfCargoCreate.as_view() , name="tocs_nuevo" ),
+    url(r'^toc/list$', TypeOfCargoList.as_view() , name="tocs_list" ),
     url(r'^toc/edit/(?P<pk>\d)/$', TypeOfCargoUpdate.as_view() , name="tocs_update"),
     url(r'^toc/delete/(?P<pk>\d)/$', TypeOfCargoDelete.as_view() , name="tocs_delete"),
 ]
