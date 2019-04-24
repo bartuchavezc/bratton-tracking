@@ -52,7 +52,6 @@ class ChangeUserToActivated(LoginRequiredMixin, PermissionRequiredMixin ,UpdateV
     template_name = 'administracion/users/user_update_page.html'
     success_url = reverse_lazy('administracion:solicitudes')
 
-'''
 class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
     login_url = '/users/login/'
     template_name = 'administracion/cargas-list.html'
@@ -62,11 +61,10 @@ class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
         ##context['customers'] = Customer.objects.order_by('customer')
         context['services'] = Service.objects.order_by('service')
         context['tocs'] = TypeOfCargo.objects.order_by('type')
-        return context    
-'''     
+        return context  
 
     #////////////////////Lits views//////////////////////
-    '''
+'''
 class VesselList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
     permission_required = 'users.validate_user'
