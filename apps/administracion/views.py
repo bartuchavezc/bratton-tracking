@@ -93,7 +93,7 @@ class CustomerList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     permission_required = 'users.validate_user'
     redirect_field_name = '/administracion/'
     model = Customer
-    template_name = 'administracion/index.html'
+    template_name = 'administracion/customer/list.html'
 
 
 
