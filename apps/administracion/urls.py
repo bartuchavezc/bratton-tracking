@@ -3,7 +3,8 @@ from apps.administracion.views import index, IndexList, IndexView, CargasView, \
     VesselCreate, VesselUpdate, VesselDelete, \
     ServiceCreate, ServiceUpdate, ServiceDelete, \
     TypeOfCargoCreate, TypeOfCargoUpdate, TypeOfCargoDelete, \
-    CustomerCreate, CustomerUpdate, CustomerDelete, SolicitudesList, ChangeUserToActivated, StatusIdentUpdate
+    CustomerCreate, CustomerUpdate, CustomerDelete, SolicitudesList, ChangeUserToActivated, StatusIdentUpdate, \
+    ServiceList, CustomerList, TypeOfCargoList
 from django.contrib.auth.decorators import login_required
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name="index"),
