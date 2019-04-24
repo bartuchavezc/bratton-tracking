@@ -53,24 +53,17 @@ class ChangeUserToActivated(LoginRequiredMixin, PermissionRequiredMixin ,UpdateV
     success_url = reverse_lazy('administracion:solicitudes')
 
 
-##class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
-##    login_url = '/users/login/'
-##    template_name = 'administracion/cargas-list.html'
-##    permission_required = 'users.validate_user'
-##    def get_context_data(self, **kwargs):
-##        context = super(CargasView, self).get_context_data(**kwargs)
-##       context['customers'] = Customer.objects.order_by('customer')
-##        context['services'] = Service.objects.order_by('service')
-##        context['tocs'] = TypeOfCargo.objects.order_by('type')
-##        return context    
-    
-class CargasView(TemplateView):
+class CargasView(LoginRequiredMixin, PermissionRequiredMixin ,TemplateView):
+    login_url = '/users/login/'
     template_name = 'administracion/cargas-list.html'
+    permission_required = 'users.validate_user'
     def get_context_data(self, **kwargs):
         context = super(CargasView, self).get_context_data(**kwargs)
-        context['customers'] = []
-        return context   
-
+        ##context['customers'] = Customer.objects.order_by('customer')
+        context['services'] = Service.objects.order_by('service')
+        context['tocs'] = TypeOfCargo.objects.order_by('type')
+        return context    
+     
 '''
     ////////////////////Lit's views//////////////////////
 class VesselList (LoginRequiredMixin ,ListView):
