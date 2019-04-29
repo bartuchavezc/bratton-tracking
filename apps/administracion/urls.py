@@ -6,6 +6,9 @@ from apps.administracion.views import index, IndexList, IndexView, CargasView, \
     CustomerCreate, CustomerUpdate, CustomerDelete, SolicitudesList, ChangeUserToActivated, StatusIdentUpdate, \
     ServiceList, CustomerList, TypeOfCargoList
 from django.contrib.auth.decorators import login_required
+
+from apps.administracion.views import customers_list
+
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name="index"),
     url(r'^solicitudes', SolicitudesList.as_view(), name='solicitudes'),
@@ -18,7 +21,9 @@ urlpatterns = [
     url(r'^vessel/delete/(?P<pk>\d)/$', VesselDelete.as_view() , name="vessels_delete"),
     ##customers
     url(r'^customers/new$', CustomerCreate.as_view() , name="customers_nuevo" ),
-    url(r'^customer/list$', CustomerList.as_view() , name="customer_list" ),
+    ## Listar customers
+    url(r'^customer/list$', customers_list , name="customer_list" ),
+    
     url(r'^customers/edit/(?P<pk>\d)/$', CustomerUpdate.as_view() , name="customers_update"),
     url(r'^customers/delete/(?P<pk>\d)/$', CustomerDelete.as_view() , name="customers_delete"),
     ##services

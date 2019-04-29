@@ -88,13 +88,20 @@ class TypeOfCargoList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     model = TypeOfCargo
     template_name = 'administracion/toc/list.html'
 
-class CustomerList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
-    login_url = '/users/login/'
-    permission_required = 'users.validate_user'
-    redirect_field_name = '/administracion/'
-    model = Customer
-    template_name = 'administracion/customer/list.html'
+##class CustomerList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
+##    login_url = '/users/login/'
+##    permission_required = 'users.validate_user'
+##    redirect_field_name = '/administracion/'
+##    model = Customer
+##    template_name = 'administracion/customer/list.html'
 
+
+## Lista de Customers vista basada en funcion
+
+def customers_list(request):
+    customer = Customer.objects.all()
+    context = {'Customer: ' customer}
+    return render(reuqest, 'administracion/customer/list.html')
 
 
 class VesselCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
