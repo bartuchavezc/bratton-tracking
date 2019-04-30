@@ -24,7 +24,7 @@ urlpatterns = [
     ## Listar customers
     url(r'^customer/list$', customers_list , name="customer_list" ),
     
-    url(r'^customers/edit/(?P<pk>\d)/$', CustomerUpdate.as_view() , name="customers_update"),
+    url(r'^customers/edit/(?P<pk>\d+)/$', CustomerUpdate.as_view() , name="customers_update"),
     url(r'^customers/delete/(?P<pk>\d)/$', CustomerDelete.as_view() , name="customers_delete"),
     ##services
     url(r'^services/new$', ServiceCreate.as_view() , name="services_nuevo" ),
