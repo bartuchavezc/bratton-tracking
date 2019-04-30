@@ -4,7 +4,7 @@ from apps.administracion.views import index, IndexList, IndexView, CargasView, \
     ServiceCreate, ServiceUpdate, ServiceDelete, \
     TypeOfCargoCreate, TypeOfCargoUpdate, TypeOfCargoDelete, \
     CustomerCreate, CustomerUpdate, CustomerDelete, SolicitudesList, ChangeUserToActivated, StatusIdentUpdate, \
-    ServiceList, CustomerList, TypeOfCargoList
+    ServiceList, TypeOfCargoList
 from django.contrib.auth.decorators import login_required
 
 from apps.administracion.views import customers_list
