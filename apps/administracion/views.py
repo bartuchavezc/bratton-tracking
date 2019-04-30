@@ -100,7 +100,7 @@ class TypeOfCargoList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
 
 def customers_list(request):
     customer = Customer.objects.all()
-    context = {'Customer: ', customer}
+    context = {'customers: ', customer}
     return render(request, 'administracion/customer/list.html', context)
 
 
