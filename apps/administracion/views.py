@@ -128,7 +128,7 @@ class ServiceCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
     model = Service
     form_class = ServiceForm
     template_name = 'administracion/service/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class ServiceUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView):
     login_url = '/users/login/'
@@ -137,7 +137,7 @@ class ServiceUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView):
     model = Service
     form_class = ServiceForm
     template_name = 'administracion/service/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class ServiceDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     login_url = '/users/login/'
@@ -145,7 +145,7 @@ class ServiceDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     redirect_field_name = '/administracion/'
     model = Service
     template_name = 'administracion/service/delete.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 #Views servicio
 
@@ -156,7 +156,7 @@ class TypeOfCargoCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView
     model = TypeOfCargo
     form_class = TypeOfCargoForm
     template_name = 'administracion/toc/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class TypeOfCargoUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView):
     login_url = '/users/login/'
@@ -165,7 +165,7 @@ class TypeOfCargoUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView
     model = TypeOfCargo
     form_class = TypeOfCargoForm
     template_name = 'administracion/toc/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class TypeOfCargoDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     login_url = '/users/login/'
@@ -173,7 +173,7 @@ class TypeOfCargoDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView
     redirect_field_name = '/administracion/'
     model = TypeOfCargo
     template_name = 'administracion/toc/delete.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 
 #Views container
@@ -185,7 +185,7 @@ class CustomerCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
     model = Customer
     form_class = CustomerForm
     template_name = 'administracion/customer/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class CustomerUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView):
     login_url = '/users/login/'
@@ -194,7 +194,7 @@ class CustomerUpdate (LoginRequiredMixin, PermissionRequiredMixin ,UpdateView):
     model = Customer
     form_class = CustomerForm
     template_name = 'administracion/customer/update.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class CustomerDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     login_url = '/users/login/'
@@ -202,7 +202,7 @@ class CustomerDelete (LoginRequiredMixin, PermissionRequiredMixin ,DeleteView):
     redirect_field_name = '/administracion/'
     model = Customer
     template_name = 'administracion/customer/delete.html'
-    success_url = reverse_lazy('administracion:index')
+    success_url = reverse_lazy('administracion:cargas')
 
 class IndexList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
     login_url = '/users/login/'
