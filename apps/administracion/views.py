@@ -101,7 +101,7 @@ class TypeOfCargoList (LoginRequiredMixin, PermissionRequiredMixin ,ListView):
 def customers_list(request):
     customer = Customer.objects.all()
     context = {'Customer: ', customer}
-    return render(request, 'administracion/customer/list.html', contexto)
+    return render(request, 'administracion/customer/list.html', context)
 
 
 class VesselCreate (LoginRequiredMixin, PermissionRequiredMixin ,CreateView):
