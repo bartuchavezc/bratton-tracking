@@ -25,10 +25,3 @@ class MyVesselListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         return Vessel.objects.filter(customer = self.request.user.customer).order_by('bl_number')
-
-''' def get_context_data(self, **kwargs):
-    context = super(My, self).get_context_data(**kwargs)
-    context['vessels_in_progress'] = Vessel.objects.filter(customer = self.user.customer).filter(stat = 2)
-    context['vessels_finished'] = Service.objects.filter(customer = self.user.customer).filter(stat = 3)
-    context['vessels_proximos'] = TypeOfCargo.filter(customer = self.user.customer).filter(stat = 1)
-    return context '''
